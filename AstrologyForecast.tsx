@@ -1,0 +1,6 @@
+// ...existing code...
+
+// Add logic to handle API calls after ensuring the model is ready
+// For example, you can add a loading state or a retry mechanism if needed
+
+// ...existing code...

@@ -10,13 +10,10 @@ const AstrologyForecast: React.FC<AstrologyForecastProps> = ({ birthdate }) => {
 
     React.useEffect(() => {
         const fetchForecast = async () => {
-            // Placeholder for fetching astrology forecast based on birthdate
-            //const response = await fetch(`https://api.astrology.com/forecast?birthdate=${birthdate}`);
-            const response = await fetch('https://aztro.readthedocs.io/en/latest/', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+            const response = await fetch('/api/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ birthdate }),
             });
             const data = await response.json();
             setForecast(data.forecast);

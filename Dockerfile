@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install additional Python dependencies
+RUN pip install pandas scikit-learn flask
+
 # Copy the rest of the application code
 COPY . .
 
